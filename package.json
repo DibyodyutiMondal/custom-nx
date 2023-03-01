@@ -8,6 +8,7 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
+    "@nrwl/js": "^15.8.1",
     "nx": "15.7.1",
     "typescript": "^4.9.5"
   },
