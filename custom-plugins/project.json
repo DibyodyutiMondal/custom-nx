@@ -1,0 +1,53 @@
+{
+  "name": "custom-plugins",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "custom-plugins/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/./custom-plugins",
+        "main": "custom-plugins/src/index.ts",
+        "tsConfig": "custom-plugins/tsconfig.lib.json",
+        "assets": [
+          "custom-plugins/*.md",
+          {
+            "input": "./custom-plugins/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./custom-plugins/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./custom-plugins",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./custom-plugins",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "custom-plugins/**/*.ts",
+          "custom-plugins/generators.json",
+          "custom-plugins/executors.json",
+          "custom-plugins/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
