@@ -8,6 +8,9 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "nx": "^15.8.1"
+    "nx": "15.7.1"
+  },
+  "nx": {
+    "targets": {}
   }
 }
