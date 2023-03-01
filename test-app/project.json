@@ -1,0 +1,63 @@
+{
+  "name": "test-app",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "test-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/test-app",
+        "format": [
+          "cjs"
+        ],
+        "bundle": false,
+        "main": "test-app/src/main.ts",
+        "tsConfig": "test-app/tsconfig.app.json",
+        "assets": [
+          "test-app/src/assets"
+        ],
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "test-app:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "test-app:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "test-app/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
