@@ -1,10 +1,6 @@
-import {
-  formatFiles, output, ProjectConfiguration, readProjectConfiguration,
-  Tree, updateProjectConfiguration,
-  targetToTargetString
-} from '@nrwl/devkit';
-import { AddCustomServeExecutorSchema } from './schema';
+import { output, ProjectConfiguration, readProjectConfiguration, targetToTargetString, Tree, updateProjectConfiguration } from '@nrwl/devkit';
 import { prompt } from 'enquirer';
+import { AddCustomServeExecutorSchema } from './schema';
 
 interface NormalizedOptions extends AddCustomServeExecutorSchema {
   target: string;
@@ -74,7 +70,7 @@ export default async function (tree: Tree, options: AddCustomServeExecutorSchema
   );
 }
 
-async function getBuildTargetFromConfig(projectConfig: ProjectConfiguration, { buildTarget, project }: AddCustomServeExecutorSchema) {
+async function getBuildTargetFromConfig(projectConfig: ProjectConfiguration, { buildTarget }: AddCustomServeExecutorSchema) {
   if (buildTarget && buildTarget in projectConfig.targets) {
     return buildTarget;
   }
