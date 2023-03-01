@@ -3,10 +3,10 @@
   "name": "custom-plugins",
   "version": "0.0.1",
   "generators": {
-    "custom-plugins": {
-      "factory": "./src/generators/custom-plugins/generator",
-      "schema": "./src/generators/custom-plugins/schema.json",
-      "description": "custom-plugins generator"
+    "add-to-project": {
+      "factory": "./src/generators/add-to-project/generator",
+      "schema": "./src/generators/add-to-project/schema.json",
+      "description": "adds a serve target which uses esbuild-dev-server to the specified project"
     }
   }
 }
