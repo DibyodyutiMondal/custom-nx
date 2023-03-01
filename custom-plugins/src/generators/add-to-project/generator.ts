@@ -72,8 +72,6 @@ export default async function (tree: Tree, options: AddCustomServeExecutorSchema
       }
     }
   );
-
-  await formatFiles(tree);
 }
 
 async function getBuildTargetFromConfig(projectConfig: ProjectConfiguration, { buildTarget, project }: AddCustomServeExecutorSchema) {
