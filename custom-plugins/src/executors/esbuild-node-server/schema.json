@@ -2,9 +2,17 @@
   "$schema": "http://json-schema.org/schema",
   "version": 2,
   "cli": "nx",
-  "title": "Build executor",
+  "title": "Esbuild Node Server Executor",
   "description": "",
   "type": "object",
-  "properties": {},
-  "required": []
+  "properties": {
+    "buildTarget": {
+      "type": "string"
+    },
+    "experimentalNodeResolution": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": ["buildTarget"]
 }

@@ -34,7 +34,7 @@
       "executor": "custom-plugins:esbuild-node-server",
       "options": {
         "buildTarget": "api:build",
-        "experimentalNodeResolution": false
+        "experimentalNodeResolution": true
       },
       "configurations": {
         "production": {
