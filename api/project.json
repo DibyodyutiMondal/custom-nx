@@ -31,7 +31,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/js:node",
+      "executor": "custom-plugin:esbuild-node-server",
       "options": {
         "buildTarget": "api:build"
       },
