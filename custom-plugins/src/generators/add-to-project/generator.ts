@@ -48,7 +48,7 @@ export default async function (tree: Tree, options: AddCustomServeExecutorSchema
       targets: {
         ...projectConfig.targets,
         [normalizedOptions.target]: {
-          executor: 'custom-plugin:esbuild-node-server',
+          executor: 'custom-plugins:esbuild-node-server',
           options: {
             buildTarget: targetToTargetString({
               project: normalizedOptions.project,
