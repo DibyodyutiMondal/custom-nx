@@ -40,7 +40,8 @@
         "production": {
           "buildTarget": "api:build:production"
         }
-      }
+      },
+      "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

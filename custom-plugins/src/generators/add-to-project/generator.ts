@@ -39,7 +39,6 @@ async function normalizeOptions(projectConfig: ProjectConfiguration, options: Ad
 export default async function (tree: Tree, options: AddCustomServeExecutorSchema) {
   const projectConfig = readProjectConfiguration(tree, options.project);
   const normalizedOptions = await normalizeOptions(projectConfig, options);
-  console.debug(normalizedOptions)
 
   updateProjectConfiguration(
     tree,
@@ -65,7 +64,8 @@ export default async function (tree: Tree, options: AddCustomServeExecutorSchema
                 configuration: 'production'
               })
             }
-          } satisfies { [key: string]: Partial<EsbuildNodeServerExecutorSchema> }
+          } satisfies { [key: string]: Partial<EsbuildNodeServerExecutorSchema> },
+          dependsOn: [normalizedOptions.buildTarget]
         }
       }
     }
