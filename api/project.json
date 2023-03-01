@@ -33,7 +33,8 @@
     "serve": {
       "executor": "custom-plugins:esbuild-node-server",
       "options": {
-        "buildTarget": "api:build"
+        "buildTarget": "api:build",
+        "experimentalNodeResolution": false
       },
       "configurations": {
         "production": {

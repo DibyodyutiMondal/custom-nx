@@ -1,4 +1,5 @@
 import { output, ProjectConfiguration, readProjectConfiguration, targetToTargetString, Tree, updateProjectConfiguration } from '@nrwl/devkit';
+import { EsbuildNodeServerExecutorSchema } from '../../executors/esbuild-node-server/schema';
 import { prompt } from 'enquirer';
 import { AddCustomServeExecutorSchema } from './schema';
 
@@ -53,8 +54,9 @@ export default async function (tree: Tree, options: AddCustomServeExecutorSchema
             buildTarget: targetToTargetString({
               project: normalizedOptions.project,
               target: normalizedOptions.buildTarget
-            })
-          },
+            }),
+            experimentalNodeResolution: false
+          } satisfies EsbuildNodeServerExecutorSchema,
           configurations: {
             production: {
               buildTarget: targetToTargetString({
@@ -63,7 +65,7 @@ export default async function (tree: Tree, options: AddCustomServeExecutorSchema
                 configuration: 'production'
               })
             }
-          }
+          } satisfies { [key: string]: Partial<EsbuildNodeServerExecutorSchema> }
         }
       }
     }
