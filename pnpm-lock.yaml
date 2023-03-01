@@ -18,6 +18,7 @@ specifiers:
   '@types/node': ~18.7.1
   '@typescript-eslint/eslint-plugin': ^5.36.1
   '@typescript-eslint/parser': ^5.36.1
+  enquirer: ^2.3.6
   esbuild: ^0.17.5
   eslint: ~8.15.0
   eslint-config-prettier: 8.1.0
@@ -52,6 +53,7 @@ devDependencies:
   '@types/node': 18.7.23
   '@typescript-eslint/eslint-plugin': 5.54.0_l4bbdrgi64j4qhdxd5wyz7waci
   '@typescript-eslint/parser': 5.54.0_hx5tgzcbd2ycqgjduqhliuc3jm
+  enquirer: 2.3.6
   esbuild: 0.17.10
   eslint: 8.15.0
   eslint-config-prettier: 8.1.0_eslint@8.15.0

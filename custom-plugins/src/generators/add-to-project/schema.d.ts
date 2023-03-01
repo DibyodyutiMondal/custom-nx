@@ -1,5 +1,5 @@
-export interface CustomPluginsGeneratorSchema {
-    name: string;
-    tags?: string;
-    directory?: string;
+export interface AddCustomServeExecutorSchema {
+    project: string;
+    buildTarget?: string;
+    target?: string;
 }
