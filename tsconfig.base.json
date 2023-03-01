@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "custom-plugins": ["custom-plugins/src/index.ts"]
+      "custom-plugins": ["custom-plugins/src/index.ts"],
+      "utils": ["utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
