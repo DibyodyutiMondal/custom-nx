@@ -1,4 +1,5 @@
 import fastify from 'fastify';
+import { handlers } from './handlers';
 
 const host = '0.0.0.0';
 const port = 9100;
@@ -13,9 +14,7 @@ setupServer()
 async function setupServer() {
   const server = fastify();
 
-  server.get('/', async () => {
-    return { 'hello': 'world' };
-  });
+  await server.register(handlers);
 
   return server;
 }
