@@ -79,7 +79,7 @@ export default async function* esbuildNodeServerExecutor(
     console.log(' ');
 
     if (result.success) {
-      const cp = spawn('node', [result.outfile], { env, stdio: 'inherit' });
+      const cp = spawn('node', ['--inspect', result.outfile], { env, stdio: 'inherit' });
       // clear the variable in case the process exits early (like with errors)
       cp.on('close', () => existingCp = undefined);
       existingCp = cp;
