@@ -15,7 +15,7 @@ setupServer()
 async function setupServer() {
 
   console.debug('calling some library function');
-  await sleep(6000);
+  await sleep(3000);
   console.debug('finished calling library function');
 
   const server = fastify();
