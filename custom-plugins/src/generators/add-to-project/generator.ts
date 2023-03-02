@@ -64,8 +64,7 @@ export default async function (tree: Tree, options: AddCustomServeExecutorSchema
                 configuration: 'production'
               })
             }
-          } satisfies { [key: string]: Partial<EsbuildNodeServerExecutorSchema> },
-          dependsOn: [normalizedOptions.buildTarget]
+          } satisfies { [key: string]: Partial<EsbuildNodeServerExecutorSchema> }
         }
       }
     }
